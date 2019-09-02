@@ -1,0 +1,72 @@
+---
+extends:
+  - tslint:recommended
+  - tslint-config-airbnb
+  - ./tslint-codelyzer.yaml
+linter-options:
+  exclude:
+    - ./**/*.spec.ts
+rules:
+  trailing-comma:
+    options:
+      multiline: always
+      singleline: never
+      esSpecCompliant: true
+    severity: warning
+  max-line-length: false
+  align: false
+  ter-arrow-parens:
+    - true
+    - as-needed
+  prefer-array-literal: false
+  no-increment-decrement: false
+  variable-name:
+    - true
+    - check-format
+    - allow-leading-underscore
+    - allow-pascal-case
+  object-shorthand-properties-first: false
+  function-constructor: true
+  ordered-imports: false
+  member-access: false
+  member-ordering: false
+  object-literal-sort-keys: false
+  no-console: false
+  no-debugger: false
+  interface-name: false
+  no-string-literal: false
+  no-empty: false
+  no-empty-interface: false
+  no-angle-bracket-type-assertion: false
+  array-type: false
+  jsdoc-format:
+    severity: warning
+  only-arrow-functions: false
+  adjacent-overload-signatures: false
+  prefer-for-of: false
+  curly:
+    - true
+    - ignore-same-line
+  indent:
+    options:
+      - spaces
+      - 2
+  max-classes-per-file: false
+  no-trailing-whitespace:
+    - true
+    - ignore-blank-lines
+  typedef: # there is no way to set call-signature as warning only, so whole rule is treated as warning, fix later
+    options:
+      - call-signature
+      - parameter
+      - property-declaration
+    severity: warning
+  no-inferrable-types: # this works for variables or parameters initialized to a number, string, or boolean
+    - true
+    - ignore-params
+    - ignore-properties
+  strict-boolean-expressions: false
+  space-before-function-paren: false
+  no-accessor-recursion: true
+  no-return-undefined: true
+  no-static-this: true
